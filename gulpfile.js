@@ -16,7 +16,8 @@ var gulp           = require('gulp'),
 	svgSprite      = require('gulp-svg-sprite'),
 	svgmin         = require('gulp-svgmin'),
 	cheerio        = require('gulp-cheerio'),
-	replace        = require('gulp-replace');
+	replace        = require('gulp-replace'),
+    ghpages        = require('gulp-gh-pages');
 
 gulp.task('svgSpriteBuild', function () {
 	return gulp.src('app/svg/*.svg')
@@ -155,7 +156,13 @@ gulp.task('deploy', function() {
 
 });
 
+gulp.task('ghpages', function () {
+    return gulp.src('./dist/**/*')
+    .pipe(ghpages());
+});
+
 gulp.task('removedist', function() { return del.sync('dist'); });
 gulp.task('clearcache', function () { return cache.clearAll(); });
 
 gulp.task('default', ['watch']);
+
