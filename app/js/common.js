@@ -373,8 +373,8 @@ $(function () {
     //     }
     //
     // });
-
-    if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+//бывший скролл
+    /*if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
         $(window).scroll(function () {
             if ($(this).scrollTop() > ($('#mapG').offset().top - $('.two-columns__left-column').height() - 1) && st < 1) {
                 $('.two-columns__left-column').removeClass('fixed1').addClass('relative').css({
@@ -410,7 +410,7 @@ $(function () {
             }
 
         });
-    }
+    }*/
 
 
     $('.level__line').each(function () {
@@ -937,3 +937,9 @@ $(document).ready(function () {
 
 
 });
+
+(function() {
+  $('.two-columns__left-column, .two-columns__right-column').theiaStickySidebar({
+    additionalMarginTop: 112
+  });
+})();

@@ -70,7 +70,8 @@ gulp.task('scripts', function() {
 		'app/libs/photoswipe/dist/photoswipe-ui-default.min.js',
 		'app/libs/jquery-touchswipe/jquery.touchSwipe.min.js',
 		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
-		'app/libs/svg4everybody/dist/svg4everybody.js'
+		'app/libs/svg4everybody/dist/svg4everybody.js',
+        'app/libs/sticky-sidebar/theia-sticky-sidebar.min.js'
 		// 'app/js/common.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
