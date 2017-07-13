@@ -895,8 +895,10 @@ $(document).ready(function () {
         $('input').each(function(){
             if ($(this).val().length > 0) {
                 $(this).removeClass('input_empty');
+                $(this).siblings('.error-message').remove();
             } else {
                 $(this).addClass('input_empty');
+                $(this).after('<div class="error-message">' + $(this).attr('placeholder') + ' is empty' + '</div>');
             }
         });
     }
@@ -904,8 +906,10 @@ $(document).ready(function () {
     $('input').on('keyup change', function(){
         if ($(this).val().length > 0) {
             $(this).removeClass('input_empty');
+            $(this).siblings('.error-message').remove();
         } else {
             $(this).addClass('input_empty');
+            $(this).after('<div class="error-message">' + $(this).attr('placeholder') + ' is empty' + '</div>');
         }
     });
 
@@ -918,6 +922,7 @@ $(document).ready(function () {
             // Действие при успешной отправке формы
         }
     });
+    
 
 
     $(".js-nextstep-button").click(function(e){
