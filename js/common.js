@@ -524,7 +524,7 @@ $(function () {
     });
     
     $('.two-columns__table__title').click(function () {
-        $(this).toggleClass('active').parent().find('.two-columns__table__wrap').slideToggle(200);
+        $(this).toggleClass('active').closest().find('.two-columns__table__wrap').slideToggle(200);
     });
 
     $('select').styler();
