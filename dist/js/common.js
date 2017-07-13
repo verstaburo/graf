@@ -522,6 +522,10 @@ $(function () {
     $('.application__item__title').click(function () {
         $(this).toggleClass('active').parent().find('.application__wrap').slideToggle(200);
     });
+    
+    $('.two-columns__table__title').click(function () {
+        $(this).toggleClass('active').parent().find('.two-columns__table__wrap').slideToggle(200);
+    });
 
     $('select').styler();
 

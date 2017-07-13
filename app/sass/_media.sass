@@ -1547,6 +1547,25 @@
                         width: 120px
             
             &__title
+                height: 63px
+                padding: 12px 12px 15px
+                font-size: 19px
+                
+                &::after
+                    top: 50%
+                    transform: translate(0, -50%) rotate(90deg);
+                
+                &::before
+                    margin-top: 0
+                    transform: translate(0, -50%)
+                    
+                
+                .text
+                    font-size: 19px
+                    width: calc(100% - 60px)
+                    line-height: 21px
+            
+            &__title--noopen
                 padding: 12px 12px 15px
                  
                 .icon-block
@@ -1640,12 +1659,11 @@
                             
                         &::after
                             right: 18px
-                            top: 30px
                             
                         .text
                             font-size: 13px
-                            display: inline-block
-                            width: auto  
+                            display: inline
+                            width: auto
                             
                     &__td
                         width: 68px

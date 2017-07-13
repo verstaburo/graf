@@ -2558,8 +2558,66 @@ input
 
     &__table
         margin-top: 64px
-
+        background: #fff;
+            
         &__title
+            font-family: $mtb
+            font-size: 30px
+            color: #2f404c
+            position: relative
+            height: 100px
+            padding: 21px 25px 26px
+            width: 100%
+
+            &::before,
+            &::after
+                content: ""
+                background: #8ac654
+                position: absolute
+                width: 34px
+                height: 2px
+                transform-origin: 18px 0
+                transition: all .2s ease-out
+
+            &::before
+                top: 50%
+                margin-top: -1px
+                right: 25px
+
+            &::after
+                transform: rotate(90deg)
+                right: 25px
+                top: 51px
+
+            &:hover
+                background: url('../img/backgrounds/fixed-info-title-bg.png') repeat-x
+                color: #fff
+                cursor: pointer
+
+                .text
+                    color: #fff
+                    border-bottom-color: #fff
+
+            .text
+                display: inline
+                color: #2f404c
+                border-bottom: 1px solid #8ac654
+                padding-bottom: 2px
+
+            &.active
+                color: #fff
+                background: url('../img/backgrounds/fixed-info-title-bg.png') repeat-x
+
+                &::after
+                    transform: rotate(0)
+                    top: 50%
+                    margin-top: -1px
+
+                .text
+                    color: #fff
+                    border-bottom: none
+
+        &__title--noopen
             background: url('../img/backgrounds/fixed-info-title-bg.png') repeat-x
             padding: 21px 25px 26px
             width: 100%
@@ -2585,7 +2643,10 @@ input
                 color: #fff
 
         &__wrap
-            //display: table
+            display: none
+            width: 100%
+        
+        &__wrap--noopen
             display: block
             width: 100%
 
