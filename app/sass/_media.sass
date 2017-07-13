@@ -871,7 +871,7 @@
                 padding-top: 17px
     
     .container
-        width: 320px
+        width: 100%
         padding: 0 19px
         
 
@@ -1035,6 +1035,8 @@
                     float: none
                     
                     img
+                        width: 100%
+                        height: auto
                         transform: none
                         
                 &__right-side
@@ -1407,6 +1409,11 @@
             &__text
                 font-size: 12px
                 line-height: normal
+            
+            &__img-block
+                img
+                    width: 100%
+                    height: auto
                 
 
     .breadcrumbs
@@ -2067,7 +2074,7 @@
         &__inner-page
             .news
                 &__img-block
-                    height: 258px
+                    height: auto
                      
                 &__date
                     font-size: 10px
@@ -2092,6 +2099,10 @@
                             width: 100%
                             margin-right: 0
                             
+        &__img-block
+            img
+                width: 100%
+                height: auto
 
     .success
         &__icon-block
@@ -2200,16 +2211,53 @@
 
     .fixed-info-popup
         width: 320px 
+    
+    .joinus
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: flex-start
+        width: 100%
+        padding: 0
+        height: auto
+        
+        div
+            box-sizing: border-box
+            padding: 20px
+            width: auto
+        
+        .signin-button
+            display: block
+            position: relative
+            box-sizing: border-box
+            text-align: center
+            padding: 20px
+            height: auto
+            margin-left: auto
+            
+    .slick-slide
+        img
+            width: 100%
 
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px)
-    /**/
+@media only screen and (max-width : 500px)
+    .joinus
+        flex-direction: column
+        
+        div
+            width: 100%
+        
+        .signin-button
+            width: 100%
+            padding: 20px
+            height: auto
+            margin-left: 0
 
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
-    /**/
+        /**/
 
 
 
