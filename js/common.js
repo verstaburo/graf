@@ -218,16 +218,20 @@ $(function () {
         var radioToggle = $(this).attr('data-radio-toggle'),
             radioContentActive = $(this).parents('.fixed-info__item__hidden-block').find('div[data-radio-content="' + radioToggle + '"]');
 
-        if ($(window) > 767) {
-            if (radioToggle == 'radio-cont2') {
+        if ($(window).width() > 992) {
+            if (radioToggle === 'radio-cont2') {
                 $('.fixed-info-popup .fixed-info__wrap').css({
-                    'height': radioContentActive.height() + 125 + 'px'
+                    'height': radioContentActive.outer + 125 + 'px'
                 });
             } else {
                 $('.fixed-info-popup .fixed-info__wrap').css({
                     'height': ''
                 });
             }
+        } else if ($(window).width() > 767) {
+            $('.fixed-info-popup .fixed-info__wrap').css({
+                'height': radioContentActive.height() + 148 + 'px'
+            });
         } else {
             $('.fixed-info-popup .fixed-info__wrap').css({
                 'height': radioContentActive.height() + 62 + 'px'
@@ -518,6 +522,10 @@ $(function () {
     $('.application__item__title').click(function () {
         $(this).toggleClass('active').parent().find('.application__wrap').slideToggle(200);
     });
+    
+    $('.two-columns__table__title').click(function () {
+        $(this).toggleClass('active').parent().find('.two-columns__table__wrap').slideToggle(200);
+    });
 
     $('select').styler();
 
@@ -549,7 +557,7 @@ $(function () {
     var lastId,
         topMenu = $(".nav-blocks"),
         // topMenuHeight = topMenu.outerHeight() + 15,
-        topMenuHeight = 0,
+        topMenuHeight = $('.main-header').outerHeight(),
         // All list items
         menuItems = topMenu.find("a"),
         // Anchors corresponding to menu items
