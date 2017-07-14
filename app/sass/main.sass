@@ -1057,11 +1057,9 @@ input
 
 .main-header
     background: #fff
-    padding-top: 25px
-    padding-bottom: 22px
+    padding: 28px 0
     position: relative
     z-index: 30
-    min-height: 112px
 
     &.fixed
         position: fixed
@@ -1074,9 +1072,11 @@ input
 .logo
     width: 355px
     margin-right: 50px
+    order: 1
 
     a
         display: block
+        line-height: 0
 
     img
         width: 354px
@@ -1084,34 +1084,33 @@ input
 
 
 .phone
+    position: relative
     font-family: $csb
     color: #7fc241
-    margin-top: 16px
     margin-right: 33px
-
-    &.active
-        margin-right: 0
-        margin-top: 10px
-        line-height: 37px
+    order: 2
+    padding-left: 37px
 
     .icon
-        vertical-align: middle
+        position: absolute
+        top: 50%
+        left: 0
+        transform: translate(0, -50%);
         font-size: 30px
-        margin-right: 7px
-        position: relative
-        top: -2px
+        width: 28px
+        height: 30px
 
         &.active
-            margin-right: 0
             width: 20px
             height: 20px
 
 
 .navbar
+    order: 3
     font-family: $bspsb
     color: #7fc241
     text-transform: uppercase
-    margin-top: 12px
+    margin-right: auto
     transition: transform .15s ease-out
 
     &.move-right
@@ -1124,11 +1123,17 @@ input
         margin: 0
         padding: 0
         position: relative
-        float: left
         z-index: 31
+        font-size: 0
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
+        align-content: flex-start
+        flex-wrap: wrap
 
         > li
-            float: left
+            display: inline-block
             list-style: none
             padding: 0
             font-size: 16px
@@ -1193,12 +1198,8 @@ input
         text-decoration: none
         padding: 0 7px
         transition: all .15s ease-out
-        height: 33px
         display: block
-        line-height: 37px
-
-        &.active
-            padding: 0 4px
+        line-height: 33px
 
         &:hover
             background: #364c5b
@@ -1206,7 +1207,10 @@ input
 
 
 .signin-button
-    margin-top: 11px
+    order: 4
+
+.toggle-mobile-menu
+    display: none
 
 /* ======================================================== */
 /* End main-header */
@@ -4693,21 +4697,31 @@ input
 
 .footer-top-block
     background: linear-gradient(-90deg, #519623, #76d222)
-    padding-top: 20px
-    padding-bottom: 14px
+    
+    .container
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
 
     .logo-footer
+        order: 1
         width: 263px
+        padding: 22px 0
+        font-size: 0
+        line-height: 0
+        margin-right: 40px
 
         img
             width: 100%
 
     .navbar-footer
+        order: 2
         font-family: $bspsb
         font-size: 18px
         color: #fff
         text-transform: uppercase
-        margin: 6px 0 0 92px
+        margin: 0 auto
 
         ul
             margin: 0
@@ -4790,12 +4804,16 @@ input
 
 
     .white-btn
+        order: 3
         width: 144px
         font-size: 18px
         height: 39px
         border-width: 2px
-        margin-top: 3px
+        margin-left: 40px
         line-height: 36px
+    
+    .toggle-mobile-menu
+        order: 2
 
 /* ======================================================== */
 /* End footer-top-block */
@@ -5126,6 +5144,13 @@ input
 
 .input_empty
     border: 1px solid red
+
+.main-header
+    .container
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
 
 /* ======================================================== */
 /* End popups */

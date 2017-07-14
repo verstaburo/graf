@@ -3,7 +3,7 @@
 
 /*==========  Desktop First  ==========*/
 
-@media only screen and (min-width : 1200px)
+@media only screen and (min-width : 1201px)
 
     .navbar
         display: block
@@ -27,20 +27,25 @@
 
     .visible-md
         display: block !important
-        
+    
+    .toggle-mobile-menu.visible-md
+        display: flex !important
 
     .hidden-md
         display: none !important
-        
+    
+    .main-header
+        padding: 0
 
     .logo
+        padding: 28px 0
         margin-right: 33px
         
 
     .navbar
         display: none
         position: absolute
-        top: 113px
+        top: 112px
         right: 0
         width: 466px 
         z-index: 60 
@@ -94,8 +99,13 @@
         
 
     .toggle-mobile-menu
-        margin: -25px 14px -22px 0
-        height: 113px
+        order: 3
+        margin: 0 14px 0 auto
+        height: 112px;
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
         
         &.active
             background: linear-gradient(to bottom, #171919, #364c5b)
@@ -116,8 +126,8 @@
             // width: 39px
             // height: 36px
             width: 102px
-            height: 113px
-            padding: 0 32px 5px 31px
+            height: auto
+            padding: 0 32px
             
             span
                 position: relative
@@ -392,11 +402,10 @@
 
     .footer-top-block
         .toggle-mobile-menu
-            margin: -20px 14px -14px 0
-            height: 86px
+            margin: 0 14px 0 auto
+            height: 86px;
             
             &__button
-                height: 86px
                 padding-bottom: 0
                 
                 span
@@ -464,6 +473,8 @@
                                     top: 32px
                                     left: 60px
                                     font-size: 11px
+        .white-btn
+            margin-left: 0
 
 
 @media (max-height: 767px)
@@ -488,10 +499,13 @@
                 background: #fff
                 
             .main-header
-                padding-top: 25px
+                padding: 0
+            
+            .logo
+                padding: 28px 0
                 
             .navbar
-                top: 113px
+                top: 112px
             
             .fixed-info
                 display: block
@@ -499,6 +513,9 @@
                 &.hidden-sm,
                 &.hidden-xs
                     display: none
+            
+            .toggle-mobile-menu
+                height: 112px
     
     .container
         //width: 768px
@@ -519,8 +536,13 @@
         
 
     .main-header
-        padding-top: 32px
-        
+        padding: 0;
+    
+    .logo
+        padding: 32px 0
+    
+    .toggle-mobile-menu
+        height: 120px
 
     .navbar
         top: 120px
@@ -867,8 +889,11 @@
         padding-bottom: 0
         
         &.main-page
-            .main-header
-                padding-top: 17px
+            .logo
+                padding: 17px 0
+            
+            .toggle-mobile-menu
+                height: 58px
     
     .container
         width: 100%
@@ -891,12 +916,11 @@
         
 
     .main-header
-        padding-top: 17px
-        padding-bottom: 0
         min-height: inherit
         
 
     .logo
+        padding: 17px 0
         width: 150px
         margin-right: 0
         
@@ -905,14 +929,13 @@
             
 
     .toggle-mobile-menu
-        height: 60px
-        margin: -17px 0 0
+        margin-left: auto
+        height: 58px
         
         &__button
             width: 53px
             padding-left: 15px
             padding-right: 15px
-            height: 60px 
             
             span
                 height: 4px
@@ -926,7 +949,7 @@
 
     .navbar
         width: 233px
-        top: 60px !important
+        top: 58px !important
         padding: 15px 0
         
         &__nav 
@@ -2128,11 +2151,10 @@
                 
 
     .footer-top-block
-        padding-top: 17px
-        padding-bottom: 0
         
         .logo-footer
             width: 150px
+            padding: 18px 0
             
         .white-btn
             width: 72px
@@ -2143,7 +2165,8 @@
             
         .toggle-mobile-menu
             height: 60px
-            margin: -17px 0 0
+            margin: 0
+            margin-left: auto
             
             &__button
                 height: 60px

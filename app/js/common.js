@@ -373,45 +373,6 @@ $(function () {
     //     }
     //
     // });
-//бывший скролл
-    /*if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > ($('#mapG').offset().top - $('.two-columns__left-column').height() - 1) && st < 1) {
-                $('.two-columns__left-column').removeClass('fixed1').addClass('relative').css({
-                    'top': ($('#mapG').offset().top - $('.two-columns__left-column').height()) + 'px'
-                });
-                st++;
-            }
-            if ($(this).scrollTop() > 0 && $(this).scrollTop() < ($('#mapG').offset().top - $('.two-columns__left-column').height())) {
-                $('.two-columns__left-column').removeClass('relative').addClass('fixed1').css({
-                    'top': ''
-                });
-                st = 0;
-            } else {
-                $('.two-columns__left-column').removeClass('fixed1');
-            }
-
-        });
-    } else {
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > ($('#mapG').offset().top - $('.two-columns__left-column').height() - 1) && st < 1) {
-                $('.two-columns__left-column').removeClass('fixed').addClass('relative').css({
-                    'top': ($('#mapG').offset().top - $('.two-columns__left-column').height()) + 'px'
-                });
-                st++;
-            }
-            if ($(this).scrollTop() > 0 && $(this).scrollTop() < ($('#mapG').offset().top - $('.two-columns__left-column').height())) {
-                $('.two-columns__left-column').removeClass('relative').addClass('fixed').css({
-                    'top': ''
-                });
-                st = 0;
-            } else {
-                $('.two-columns__left-column').removeClass('fixed');
-            }
-
-        });
-    }*/
-
 
     $('.level__line').each(function () {
         var percent = $(this).find('.inner-block').attr('data-percent');
@@ -917,6 +878,14 @@ $(document).ready(function () {
         e.preventDefault();
         checkinput();
         if ($(this).find('.input_empty').length > 0) {
+            var firstErrEl = $(this).find('.input_empty')[0];
+            if($(firstErrEl).parents('.application__item').length > 0) {
+                if(!$(firstErrEl).parents('.application__item').find('.application__item__title').hasClass('active')) {
+                $(firstErrEl).parents('.application__item').find('.application__item__title')[0].click();
+                }
+            }
+            $(firstErrEl)[0].focus();
+            $('html, body').animate({ scrollTop: $(firstErrEl)[0].offset().top }, 500);
             return false;
         } else {
             // Действие при успешной отправке формы
@@ -943,8 +912,17 @@ $(document).ready(function () {
 
 });
 
+//sticky sidebar at offices, application and profession pages
+
 (function() {
   $('.two-columns__left-column, .two-columns__right-column').theiaStickySidebar({
-    additionalMarginTop: 112
+    additionalMarginTop: 113
   });
 })();
+
+//svg support at IE and old browsers
+
+svg4everybody();
+
+
+
