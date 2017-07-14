@@ -121,7 +121,6 @@ figure
     position: relative
     z-index: 4
     background: #eff5f2 url('../img/icons/main-wrapper-label.png') repeat-x
-    flex: 1 0
     display: flex
     flex-direction: column
 
@@ -130,7 +129,6 @@ figure
         padding-top: 113px
 
     .main-content
-        flex: 1 0
 
 
 .container
@@ -2307,24 +2305,28 @@ input
 
             img
                 display: block
+        
+        &-describe
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            max-height: 100%
+            padding: 20px 30px
+            box-sizing: border-box
+            z-index: 3
 
         &__name
-            position: absolute
             font-family: $mtb
             font-size: 30px
             color: #fff
-            z-index: 3
-            bottom: 55px
-            padding: 0 30px
             width: 100%
 
         &__post
             font-size: 24px
+            line-height: 1.5em
             color: #8ac654
-            position: absolute
-            bottom: 20px
-            padding: 0 30px
-            z-index: 3
+            width: 100%
 
         &__item
             margin-bottom: 45px
