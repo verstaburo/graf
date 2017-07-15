@@ -879,11 +879,13 @@ $(document).ready(function () {
         checkinput();
         if ($(this).find('.input_empty').length > 0) {
             var firstErrEl = $(this).find('.input_empty')[0];
-            $(firstErrEl).focus();
-            if (!$(firstErrEl).closest('.application__item').find('.application__item__title').hasClass('active')) {
-               $(this).find('.input_empty')[0].closest('.application__item').find('.application__item__title')[0].click();
+            if($(firstErrEl).parents('.application__item').length > 0) {
+                if(!$(firstErrEl).parents('.application__item').find('.application__item__title').hasClass('active')) {
+                $(firstErrEl).parents('.application__item').find('.application__item__title')[0].click();
+                }
             }
-            $('html, body').animate({ scrollTop: $(firstErrEl).offset().top }, 500);
+            $(firstErrEl)[0].focus();
+            $('html, body').animate({ scrollTop: $(firstErrEl)[0].offset().top }, 500);
             return false;
         } else {
             // Действие при успешной отправке формы
@@ -921,6 +923,27 @@ $(document).ready(function () {
 //svg support at IE and old browsers
 
 svg4everybody();
+
+//обнуляем правый маржин у левой колонки новостей, если в ней "пусто"
+
+setInterval(function () {
+    var newsInLeftCol = [];
+    $('.news__left-column').children('.news__item').each(function() {
+        if($(this)[0].style.display == 0) {
+            newsInLeftCol.push(true);
+        } else {
+          newsInLeftCol.push(false);
+        }
+    });
+    
+    if (newsInLeftCol.every(function (item) {
+        return item;
+    })) {
+       $('.news__left-column').css({'margin-right' : '0'});
+    } else {
+       $('.news__left-column').removeAttr('style');
+    }
+}, 200);
 
 
 
