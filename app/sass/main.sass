@@ -4248,6 +4248,15 @@ input
 
     .mix
         display: none
+    
+    &__container
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: flex-start
+        flex-wrap: wrap
+        align-content: flex-start
+        width: 100%
 
     &__filter
         margin-bottom: 60px
@@ -4281,36 +4290,49 @@ input
         a
             text-decoration: none
             display: block
+            width: 100%
+            overflow: hidden
 
             &:hover
                 img
                     transform: scale(1.1)
 
         &--big
+            width: 100%
+            margin-bottom: 50px
+            
+            a
+                display: flex
+                flex-direction: row
+                justify-content: flex-start
+                align-items: flex-start
+            
             .news
-            &__img-block
-                display: inline-block
-                vertical-align: top
+                
+                &__img-block
+                    width: calc(50% - 23px)
+                    display: inline-block
+                    vertical-align: top
 
-            &__right-side
-                display: inline-block
-                vertical-align: top
-                width: calc(100% - 620px)
-                margin-left: 46px
-                padding-top: 50px
+                &__right-side
+                    display: inline-block
+                    vertical-align: top
+                    width: calc(50% - 23px)
+                    margin-left: 46px
+                    padding-top: 50px
 
-            &__date
-                margin-bottom: 3px
+                &__date
+                    margin-bottom: 3px
 
-            &__title
-                margin-bottom: 35px
-                color: #364c5b
-
-                a
+                &__title
+                    margin-bottom: 35px
                     color: #364c5b
 
-            &__desc
-                margin-bottom: 40px
+                    a
+                        color: #364c5b
+
+                &__desc
+                    margin-bottom: 40px
 
     &__img-block
         overflow: hidden
@@ -4370,8 +4392,10 @@ input
 
     &__left-column
         float: left
-        width: 334px
-        margin-top: 50px
+        display: block
+        max-width: 334px
+        margin-right: 45px
+        transition: all .25s ease-in-out
 
         .news
             &__item
@@ -4431,8 +4455,9 @@ input
 
     &__right-column
         float: right
-        width: 773px
-        margin-top: 50px
+        display: block
+        max-width: 773px
+        transition: all .25s ease-in-out
 
         .news
             &__item
@@ -4610,12 +4635,11 @@ input
 
 .news__right-side-main
   padding: 20px 50px
-  width: 50% !important
   float: left
   display: block
 
   @media only screen and (max-width : 767px)
-    width: 100% !important
+    width: 100%
 
 .news__title-main
   color: #2f404c

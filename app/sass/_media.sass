@@ -354,19 +354,23 @@
             &--big
                 .news
                     &__img-block
-                        width: 355px 
+                        width: 355px
                         overflow: hidden
                         
                         img
                             height: 100%
                             width: auto
-                            max-width: none  
+                            max-width: none
                             
                     &__right-side
-                        width: calc(100% - 450px)
+                        box-sizing: border-box
+                        width: calc(100% - 355px)
+                        padding-top: 0
+                        margin-left: 0
         
         &__left-column
-            width: 244px
+            max-width: 244px
+            margin-right: 37px
             overflow: hidden
             
             .news
@@ -379,7 +383,7 @@
                 max-width: none
                 
         &__right-column
-            width: 671px
+            max-width: 671px
             
             .news
                 &__desc
@@ -802,10 +806,10 @@
                         width: 244px 
                     
                     &__right-side
-                        width: calc(100% - 320px) 
+                        width: calc(100% - 244px) 
                         
         &__right-column
-            width: 408px
+            max-width: 413px
             
             .news
                 &__item
@@ -2068,6 +2072,10 @@
                 
         &__item
             &--big
+                a
+                    flex-wrap: wrap
+                    align-content: flex-start
+                
                 .news
                     &__img-block
                         width: 100%
@@ -2080,9 +2088,12 @@
                         
         &__left-column
             width: 100%
+            max-width: none
+            margin-right: 0
             
         &__right-column 
             width: 100%
+            max-width: none
             
             .news
                 &__right-side

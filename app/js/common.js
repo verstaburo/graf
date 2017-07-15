@@ -924,5 +924,26 @@ $(document).ready(function () {
 
 svg4everybody();
 
+//обнуляем правый маржин у левой колонки новостей, если в ней "пусто"
+
+setInterval(function () {
+    var newsInLeftCol = [];
+    $('.news__left-column').children('.news__item').each(function() {
+        if($(this)[0].style.display == 0) {
+            newsInLeftCol.push(true);
+        } else {
+          newsInLeftCol.push(false);
+        }
+    });
+    
+    if (newsInLeftCol.every(function (item) {
+        return item;
+    })) {
+       $('.news__left-column').css({'margin-right' : '0'});
+    } else {
+       $('.news__left-column').removeAttr('style');
+    }
+}, 200);
+
 
 
