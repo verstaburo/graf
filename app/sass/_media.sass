@@ -566,6 +566,19 @@
             line-height: 70px
             margin-bottom: 3px
             
+            .gradient-text
+          
+                svg
+                    height: 55px
+                  
+                &__text
+                    font-size: 55px
+                    
+                    &--tablet
+                        display: block
+                    &--mobile
+                        display: none
+            
         &__left-side
             width: 346px
             
@@ -872,6 +885,11 @@
             
             .copyright
                 margin-bottom: 0
+    
+    .footer-top-block
+        
+        .toggle-mobile-menu
+            height: 86px !important
 
 
 /* Small Devices, Tablets */
@@ -986,6 +1004,20 @@
             font-size: 21px
             line-height: normal
             margin-top: 45px
+            
+            .gradient-text
+          
+                svg
+                    height: 21px
+                  
+                &__text
+                    font-size: 21px
+                    
+                    &--tablet
+                        display: none
+                    
+                    &--mobile
+                        display: block
             
         &__left-side
             width: 100%
@@ -1424,6 +1456,22 @@
     .articles
         &__title
             font-size: 22px
+            
+            .gradient-text
+                width: 100%
+
+                svg
+                    width: 100%
+                    height: 22px
+
+                &__text
+                    font-size: 22px
+
+                    &--main
+                        display: none
+
+                    &--mobile
+                        display: block
             
         &__flex-wrap
             display: block
@@ -2177,7 +2225,7 @@
             line-height: 14px
             
         .toggle-mobile-menu
-            height: 60px
+            height: 60px !important
             margin: 0
             margin-left: auto
             
