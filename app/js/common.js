@@ -115,22 +115,16 @@ $(function () {
             $(this).parent().removeClass('active');
             $('.navbar--mobile').slideUp(200);
             $('.main-wrapper').css({
-                'height': '',
+                'min-height': '',
                 'overflow': ''
-            });
-            $('.main-header').css({
-                'top': ''
             });
         } else {
             $(this).parent().addClass('active');
             $('.navbar--mobile').slideDown(200, function () {
                 $('.main-wrapper').css({
-                    'height': ($('.navbar--mobile').height() + 60 + 30) + 'px',
+                    'min-height': ($('.navbar--mobile').height() + 60 + 30) + 'px',
                     'overflow': 'hidden'
                 }).scrollTop(headerPosition);
-            });
-            $('.main-header').removeClass('fixed').css({
-                'top': headerPosition + 'px'
             });
             $('.wrapper').removeClass('fixed-menu');
         }
