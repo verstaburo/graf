@@ -406,12 +406,15 @@ span
     input
         display: none
 
-        &:checked ~ label
+        &:checked + label
             span
                 border-color: #8cc758
 
                 &::before
-                    opacity: 1
+                    width: 10px
+                    height: 10px
+                    top: 4px
+                    left: 4px
 
     label
         cursor: pointer
@@ -435,11 +438,10 @@ span
                 content: ""
                 background: #364c5b
                 position: absolute
-                width: 10px
-                height: 10px
-                top: 4px
-                left: 4px
-                opacity: 0
+                width: 0
+                height: 0
+                top: 10px
+                left: 10px
                 transition: all .15s ease-out
                 border-radius: 50%
 
