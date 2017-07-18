@@ -898,7 +898,8 @@ $(document).ready(function () {
                 }
             }
             $(firstErrEl)[0].focus();
-            $('html, body').animate({ scrollTop: $(firstErrEl)[0].offset().top }, 500);
+            var topMenuHeight = $('.main-header').hasClass('fixed') ? $('.main-header').outerHeight() : 2*$('.main-header').outerHeight();
+            $('html, body').animate({ scrollTop: $(firstErrEl).offset().top - topMenuHeight }, 500);
             return false;
         } else {
             // Действие при успешной отправке формы
@@ -912,8 +913,9 @@ $(document).ready(function () {
         $(this).parents('.application__item').find('.application__item__title')[0].click();
         $(this).parents('.application__item').next().find('.application__item__title')[0].click();
         var nextElem = $(this).parents('.application__item').next()[0];
+        var topMenuHeight = $('.main-header').hasClass('fixed') ? $('.main-header').outerHeight() : 2*$('.main-header').outerHeight();
         setTimeout(function(){
-            $('html, body').animate({ scrollTop: $(nextElem).offset().top - $('.main-header').outerHeight() }, 500);
+            $('html, body').animate({ scrollTop: $(nextElem).offset().top - topMenuHeight }, 500);
             return false;
         }, 250);
     });
