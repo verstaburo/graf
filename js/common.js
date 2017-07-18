@@ -525,7 +525,7 @@ $(function () {
     var lastId,
         topMenu = $(".nav-blocks"),
         // topMenuHeight = topMenu.outerHeight() + 15,
-        topMenuHeight = $('.main-header').outerHeight(),
+        topMenuHeight,
         // All list items
         menuItems = topMenu.find("a"),
         // Anchors corresponding to menu items
@@ -539,8 +539,13 @@ $(function () {
     // Bind click handler to menu items
     // so we can get a fancy scroll animation
     menuItems.click(function (e) {
-        var href = $(this).attr("href"),
-            offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+        
+        var href = $(this).attr('href').split('#').pop(), offsetTop;
+            if ($('.wrapper').hasClass('fixed-menu')) {
+                offsetTop = $('#' + href).offset().top - $('.main-header').outerHeight();
+            } else {
+                offsetTop = $('#' + href).offset().top - 2*$('.main-header').outerHeight();
+            }
 
         $('html, body').stop().animate({
             scrollTop: offsetTop
@@ -551,8 +556,9 @@ $(function () {
 
     // Bind to scroll
     $(window).scroll(function () {
+        topMenuHeight = $('.main-header').hasClass('fixed') ? $('.main-header').outerHeight() : 2*$('.main-header').outerHeight();
         // Get container scroll position
-        var fromTop = $(this).scrollTop() + topMenuHeight;
+        var fromTop = $(this).scrollTop() + topMenuHeight + 1;
 
         // Get id of current scroll item
         var cur = scrollItems.map(function () {
@@ -905,6 +911,7 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parents('.application__item').find('.application__item__title')[0].click();
         $(this).parents('.application__item').next().find('.application__item__title')[0].click();
+        $('html, body').animate({ scrollTop: ($(this).closest('.application__item')[0].offset().top + $(this).closest('.application__item')[0].outerHeight()) }, 1000);
     });
 
 
