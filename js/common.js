@@ -911,17 +911,21 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parents('.application__item').find('.application__item__title')[0].click();
         $(this).parents('.application__item').next().find('.application__item__title')[0].click();
-        $('html, body').animate({ scrollTop: ($(this).closest('.application__item')[0].offset().top + $(this).closest('.application__item')[0].outerHeight()) }, 1000);
+        var nextElem = $(this).parents('.application__item').next()[0];
+        setTimeout(function(){
+            $('html, body').animate({ scrollTop: $(nextElem).offset().top - $('.main-header').outerHeight() }, 500);
+            return false;
+        }, 250);
     });
 
 
     //menu
 
-    $('.application__item__title').click(function(){
+    /*$('.application__item__title').click(function(){
         setTimeout(function(){
             $(window).trigger('scroll');
         }, 250);
-    });
+    });*/
 
 
 });
