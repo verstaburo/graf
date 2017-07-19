@@ -622,13 +622,14 @@ input
 
         .close-btn
             position: absolute
-            top: 33px
+            top: 50px
             right: 15px
             width: 34px
             height: 34px
             text-align: center
             line-height: 34px
             cursor: pointer
+            transform: translate(0, -50%);
             transition: background .15s ease-out
 
             &:hover
@@ -645,15 +646,18 @@ input
                 transition: all .15s ease-out
 
     &__title1
+        box-sizing: border-box
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
         background: url('../img/backgrounds/fixed-info-title-bg.png') repeat-x
         font-family: $mtb
         font-size: 43px
         color: #fff
         height: 100px
-        line-height: 90px
-        padding-left: 42px
-        padding-right: 62px
-        display: block
+        padding: 10px 62px 10px 42px
+        display: flex
+        line-height: 50px
 
         &.active
             display: none
@@ -662,32 +666,38 @@ input
             color: #8ac654
 
     &__title2
+        box-sizing: border-box
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
         background: url('../img/backgrounds/fixed-info-title-bg.png') repeat-x
         font-family: $mtb
         font-size: 27px
         color: #fff
         height: 100px
-        line-height: 90px
-        padding-left: 42px
-        padding-right: 62px
+        line-height: 40px
+        padding: 10px 62px 10px 42px
         display: none
 
         &.active
-            display: block
+            display: flex
 
     &__title3
+        box-sizing: border-box
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
         background: url('../img/backgrounds/fixed-info-title-bg.png') repeat-x
         font-family: $mtb
         font-size: 27px
         color: #fff
         height: 100px
-        line-height: 90px
-        padding-left: 42px
-        padding-right: 62px
+        line-height: 40px
+        padding: 10px 62px 10px 42px;
         display: none
 
         &.active
-            display: block
+            display: flex
 
     &__wrap
         position: relative
@@ -4215,7 +4225,7 @@ input
             display: inline-block
             position: absolute
             top: 0
-            left: 5px
+            right: 5px
             color: red
             font-size: 18px
             font-family: $csr
@@ -5148,15 +5158,15 @@ input
     .fixed-info
         &__title1
             font-size: 20px
-            line-height: 70px
+            line-height: 30px
 
         &__title2
             font-size: 20px
-            line-height: 70px
+            line-height: 30px
 
         &__title3
             font-size: 20px
-            line-height: 70px
+            line-height: 30px
 
         &__content
             display: block
